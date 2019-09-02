@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace UserManagement.Domain.Attributes
+namespace UserManagement.Domain.Helpers
 {
     class NameAttribute: ValidationAttribute
     {

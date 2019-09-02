@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserManagement.Domain.Attributes
+namespace UserManagement.Domain.Helpers
 {
     class MinimumAgeAttribute : ValidationAttribute
     {

@@ -3,7 +3,7 @@ using Dapper.Contrib.Extensions;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using UserManagement.Domain.Attributes;
+using UserManagement.Domain.Helpers;
 using UserManagement.Domain.Entities;
 using UserManagement.Repository;
 using UserManagement.Services;

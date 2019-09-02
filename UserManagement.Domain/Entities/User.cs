@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using UserManagement.Domain.Attributes;
+using UserManagement.Domain.Helpers;
 
 namespace UserManagement.Domain.Entities
 {

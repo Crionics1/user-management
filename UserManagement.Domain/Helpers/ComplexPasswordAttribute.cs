@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace UserManagement.Domain.Attributes
+namespace UserManagement.Domain.Helpers
 {
     class ComplexPasswordAttribute : ValidationAttribute 
     {
