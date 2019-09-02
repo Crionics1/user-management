@@ -1,0 +1,9 @@
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\bin\Debug\netcoreapp2.1\UserManagement.Domain.deps.json
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\bin\Debug\netcoreapp2.1\UserManagement.Domain.dll
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\bin\Debug\netcoreapp2.1\UserManagement.Domain.pdb
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\obj\Debug\netcoreapp2.1\UserManagement.Domain.csprojAssemblyReference.cache
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\obj\Debug\netcoreapp2.1\UserManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\obj\Debug\netcoreapp2.1\UserManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\obj\Debug\netcoreapp2.1\UserManagement.Domain.AssemblyInfo.cs
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\obj\Debug\netcoreapp2.1\UserManagement.Domain.dll
+C:\Users\topdo\source\repos\UserManagement\UserManagement.Domain\obj\Debug\netcoreapp2.1\UserManagement.Domain.pdb

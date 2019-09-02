@@ -1,0 +1,257 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.ConsoleTest\\UserManagement.ConsoleTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj",
+        "projectName": "StudentManagement.RepositoryContrib",
+        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj",
+        "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\topdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.ConsoleTest\\UserManagement.ConsoleTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.ConsoleTest\\UserManagement.ConsoleTest.csproj",
+        "projectName": "UserManagement.ConsoleTest",
+        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.ConsoleTest\\UserManagement.ConsoleTest.csproj",
+        "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.ConsoleTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\topdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
+                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj"
+              },
+              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
+              },
+              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj": {
+                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.6.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj",
+        "projectName": "UserManagement.Domain",
+        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\topdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj",
+        "projectName": "UserManagement.Services",
+        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj",
+        "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\topdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
+                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj"
+              },
+              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
