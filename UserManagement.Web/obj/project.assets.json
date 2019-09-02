@@ -4360,21 +4360,6 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "StudentManagement.RepositoryContrib/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Dapper": "2.0.4",
-          "Dapper.Contrib": "2.0.4",
-          "UserManagement.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/StudentManagement.RepositoryContrib.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/StudentManagement.RepositoryContrib.dll": {}
-        }
-      },
       "UserManagement.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -4388,12 +4373,27 @@
           "bin/placeholder/UserManagement.Domain.dll": {}
         }
       },
+      "UserManagement.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Dapper": "2.0.4",
+          "Dapper.Contrib": "2.0.4",
+          "UserManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UserManagement.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserManagement.Repository.dll": {}
+        }
+      },
       "UserManagement.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "StudentManagement.RepositoryContrib": "1.0.0",
-          "UserManagement.Domain": "1.0.0"
+          "UserManagement.Domain": "1.0.0",
+          "UserManagement.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/UserManagement.Services.dll": {}
@@ -11882,15 +11882,15 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "StudentManagement.RepositoryContrib/1.0.0": {
-      "type": "project",
-      "path": "../StudentManagement.RepositoryContrib/StudentManagement.RepositoryContrib.csproj",
-      "msbuildProject": "../StudentManagement.RepositoryContrib/StudentManagement.RepositoryContrib.csproj"
-    },
     "UserManagement.Domain/1.0.0": {
       "type": "project",
       "path": "../UserManagement.Domain/UserManagement.Domain.csproj",
       "msbuildProject": "../UserManagement.Domain/UserManagement.Domain.csproj"
+    },
+    "UserManagement.Repository/1.0.0": {
+      "type": "project",
+      "path": "../UserManagement.Repository/UserManagement.Repository.csproj",
+      "msbuildProject": "../UserManagement.Repository/UserManagement.Repository.csproj"
     },
     "UserManagement.Services/1.0.0": {
       "type": "project",
@@ -11903,8 +11903,8 @@
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
-      "StudentManagement.RepositoryContrib >= 1.0.0",
       "UserManagement.Domain >= 1.0.0",
+      "UserManagement.Repository >= 1.0.0",
       "UserManagement.Services >= 1.0.0"
     ]
   },
@@ -11915,11 +11915,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\UserManagement.Web.csproj",
+      "projectUniqueName": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\UserManagement.Web.csproj",
       "projectName": "UserManagement.Web",
-      "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\UserManagement.Web.csproj",
+      "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\UserManagement.Web.csproj",
       "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\obj\\",
+      "outputPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11938,14 +11938,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
-              "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj"
+            "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+              "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj"
             },
-            "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
-              "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
+            "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj": {
+              "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj"
             },
-            "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj": {
-              "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj"
+            "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj": {
+              "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj"
             }
           }
         }

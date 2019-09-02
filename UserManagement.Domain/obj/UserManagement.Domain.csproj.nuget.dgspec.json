@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {}
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj",
         "projectName": "UserManagement.Domain",
-        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

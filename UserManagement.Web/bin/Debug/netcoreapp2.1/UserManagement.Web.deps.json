@@ -27,8 +27,8 @@
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
-          "StudentManagement.RepositoryContrib": "1.0.0",
           "UserManagement.Domain": "1.0.0",
+          "UserManagement.Repository": "1.0.0",
           "UserManagement.Services": "1.0.0"
         },
         "runtime": {
@@ -69,19 +69,6 @@
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
-      "StudentManagement.RepositoryContrib/1.0.0": {
-        "dependencies": {
-          "Dapper": "2.0.4",
-          "Dapper.Contrib": "2.0.4",
-          "UserManagement.Domain": "1.0.0"
-        },
-        "runtime": {
-          "StudentManagement.RepositoryContrib.dll": {}
-        },
-        "compile": {
-          "StudentManagement.RepositoryContrib.dll": {}
-        }
-      },
       "UserManagement.Domain/1.0.0": {
         "dependencies": {
           "Dapper.Contrib": "2.0.4"
@@ -93,10 +80,23 @@
           "UserManagement.Domain.dll": {}
         }
       },
+      "UserManagement.Repository/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.4",
+          "Dapper.Contrib": "2.0.4",
+          "UserManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UserManagement.Repository.dll": {}
+        },
+        "compile": {
+          "UserManagement.Repository.dll": {}
+        }
+      },
       "UserManagement.Services/1.0.0": {
         "dependencies": {
-          "StudentManagement.RepositoryContrib": "1.0.0",
-          "UserManagement.Domain": "1.0.0"
+          "UserManagement.Domain": "1.0.0",
+          "UserManagement.Repository": "1.0.0"
         },
         "runtime": {
           "UserManagement.Services.dll": {}
@@ -3255,12 +3255,12 @@
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
     },
-    "StudentManagement.RepositoryContrib/1.0.0": {
+    "UserManagement.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UserManagement.Domain/1.0.0": {
+    "UserManagement.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentManagement.RepositoryContrib\StudentManagement.RepositoryContrib.csproj" />
     <ProjectReference Include="..\UserManagement.Domain\UserManagement.Domain.csproj" />
+    <ProjectReference Include="..\UserManagement.Repository\UserManagement.Repository.csproj" />
     <ProjectReference Include="..\UserManagement.Services\UserManagement.Services.csproj" />
   </ItemGroup>
 

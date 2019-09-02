@@ -9,7 +9,6 @@
       "UserManagement.ConsoleTest/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.4",
-          "StudentManagement.RepositoryContrib": "1.0.0",
           "System.Data.SqlClient": "4.6.1",
           "UserManagement.Domain": "1.0.0",
           "UserManagement.Services": "1.0.0"
@@ -225,16 +224,6 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "StudentManagement.RepositoryContrib/1.0.0": {
-        "dependencies": {
-          "Dapper": "2.0.4",
-          "Dapper.Contrib": "2.0.4",
-          "UserManagement.Domain": "1.0.0"
-        },
-        "runtime": {
-          "StudentManagement.RepositoryContrib.dll": {}
-        }
-      },
       "UserManagement.Domain/1.0.0": {
         "dependencies": {
           "Dapper.Contrib": "2.0.4"
@@ -243,10 +232,20 @@
           "UserManagement.Domain.dll": {}
         }
       },
+      "UserManagement.Repository/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.4",
+          "Dapper.Contrib": "2.0.4",
+          "UserManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UserManagement.Repository.dll": {}
+        }
+      },
       "UserManagement.Services/1.0.0": {
         "dependencies": {
-          "StudentManagement.RepositoryContrib": "1.0.0",
-          "UserManagement.Domain": "1.0.0"
+          "UserManagement.Domain": "1.0.0",
+          "UserManagement.Repository": "1.0.0"
         },
         "runtime": {
           "UserManagement.Services.dll": {}
@@ -414,12 +413,12 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "StudentManagement.RepositoryContrib/1.0.0": {
+    "UserManagement.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UserManagement.Domain/1.0.0": {
+    "UserManagement.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

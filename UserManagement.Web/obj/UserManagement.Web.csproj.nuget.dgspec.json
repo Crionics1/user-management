@@ -1,81 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\UserManagement.Web.csproj": {}
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\UserManagement.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj",
-        "projectName": "StudentManagement.RepositoryContrib",
-        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj",
-        "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\topdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp2.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp2.1": {
-            "projectReferences": {
-              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp2.1": {
-          "dependencies": {
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.0.4, )"
-            },
-            "Dapper.Contrib": {
-              "target": "Package",
-              "version": "[2.0.4, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.1.0, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj",
         "projectName": "UserManagement.Domain",
-        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -124,14 +60,14 @@
         }
       }
     },
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj": {
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj",
-        "projectName": "UserManagement.Services",
-        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj",
+        "projectUniqueName": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj",
+        "projectName": "UserManagement.Repository",
+        "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj",
         "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\obj\\",
+        "outputPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -150,11 +86,75 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
-                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj"
+              "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj",
+        "projectName": "UserManagement.Services",
+        "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj",
+        "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\topdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj"
               },
-              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
+              "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj": {
+                "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj"
               }
             }
           }
@@ -183,14 +183,14 @@
         }
       }
     },
-    "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\UserManagement.Web.csproj": {
+    "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\UserManagement.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\UserManagement.Web.csproj",
+        "projectUniqueName": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\UserManagement.Web.csproj",
         "projectName": "UserManagement.Web",
-        "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\UserManagement.Web.csproj",
+        "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\UserManagement.Web.csproj",
         "packagesPath": "C:\\Users\\topdo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Web\\obj\\",
+        "outputPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -209,14 +209,14 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj": {
-                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\StudentManagement.RepositoryContrib\\StudentManagement.RepositoryContrib.csproj"
+              "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Domain\\UserManagement.Domain.csproj"
               },
-              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Domain\\UserManagement.Domain.csproj"
+              "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj": {
+                "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Repository\\UserManagement.Repository.csproj"
               },
-              "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj": {
-                "projectPath": "C:\\Users\\topdo\\source\\repos\\UserManagement\\UserManagement.Services\\UserManagement.Services.csproj"
+              "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj": {
+                "projectPath": "C:\\Users\\topdo\\Desktop\\user-management\\UserManagement.Services\\UserManagement.Services.csproj"
               }
             }
           }

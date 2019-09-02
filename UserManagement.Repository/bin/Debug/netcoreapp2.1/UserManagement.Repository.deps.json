@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "5634096e72ff8fd62844ce40255ada94b1cea4cc"
+    "signature": "f39bb4271725faf7cfd7d539a0526f5e72ed8f1d"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,8 +9,8 @@
       "UserManagement.Repository/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.4",
-          "UserManagement.Domain": "1.0.0",
-          "System.Data.SqlClient": "4.4.0.0"
+          "Dapper.Contrib": "2.0.4",
+          "UserManagement.Domain": "1.0.0"
         },
         "runtime": {
           "UserManagement.Repository.dll": {}
@@ -27,6 +27,20 @@
           }
         }
       },
+      "Dapper.Contrib/2.0.4": {
+        "dependencies": {
+          "Dapper": "2.0.4",
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dapper.Contrib.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.4.31833"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.5.0": {},
       "System.IO/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0",
@@ -37,6 +51,15 @@
       "System.Reflection/4.3.0": {
         "dependencies": {
           "System.IO": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Reflection.Emit/4.3.0": {
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
           "System.Runtime": "4.3.0"
         }
@@ -74,18 +97,10 @@
       },
       "UserManagement.Domain/1.0.0": {
         "dependencies": {
-          "Dapper": "2.0.4"
+          "Dapper.Contrib": "2.0.4"
         },
         "runtime": {
           "UserManagement.Domain.dll": {}
-        }
-      },
-      "System.Data.SqlClient/4.4.0.0": {
-        "runtime": {
-          "System.Data.SqlClient.dll": {
-            "assemblyVersion": "4.4.0.0",
-            "fileVersion": "4.6.26606.5"
-          }
         }
       }
     }
@@ -103,6 +118,20 @@
       "path": "dapper/2.0.4",
       "hashPath": "dapper.2.0.4.nupkg.sha512"
     },
+    "Dapper.Contrib/2.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/07YwNQn1EqYUIfnYr96nH/h0+SNyplsZwJN2KBCKeHPbksOHVaUOnbWE9YGf1lSMOLc+PjrKyvMAU87dpOIVw==",
+      "path": "dapper.contrib/2.0.4",
+      "hashPath": "dapper.contrib.2.0.4.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+    },
     "System.IO/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -116,6 +145,13 @@
       "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
+      "path": "system.reflection.emit/4.3.0",
+      "hashPath": "system.reflection.emit.4.3.0.nupkg.sha512"
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
       "type": "package",
@@ -161,11 +197,6 @@
     },
     "UserManagement.Domain/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Data.SqlClient/4.4.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

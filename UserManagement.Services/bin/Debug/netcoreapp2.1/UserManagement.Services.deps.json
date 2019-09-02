@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v2.1": {
       "UserManagement.Services/1.0.0": {
         "dependencies": {
-          "StudentManagement.RepositoryContrib": "1.0.0",
-          "UserManagement.Domain": "1.0.0"
+          "UserManagement.Domain": "1.0.0",
+          "UserManagement.Repository": "1.0.0"
         },
         "runtime": {
           "UserManagement.Services.dll": {}
@@ -94,22 +94,22 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "StudentManagement.RepositoryContrib/1.0.0": {
-        "dependencies": {
-          "Dapper": "2.0.4",
-          "Dapper.Contrib": "2.0.4",
-          "UserManagement.Domain": "1.0.0"
-        },
-        "runtime": {
-          "StudentManagement.RepositoryContrib.dll": {}
-        }
-      },
       "UserManagement.Domain/1.0.0": {
         "dependencies": {
           "Dapper.Contrib": "2.0.4"
         },
         "runtime": {
           "UserManagement.Domain.dll": {}
+        }
+      },
+      "UserManagement.Repository/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.4",
+          "Dapper.Contrib": "2.0.4",
+          "UserManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "UserManagement.Repository.dll": {}
         }
       }
     }
@@ -204,12 +204,12 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "StudentManagement.RepositoryContrib/1.0.0": {
+    "UserManagement.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UserManagement.Domain/1.0.0": {
+    "UserManagement.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

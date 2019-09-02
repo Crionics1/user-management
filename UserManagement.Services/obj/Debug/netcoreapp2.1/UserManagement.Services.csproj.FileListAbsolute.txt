@@ -12,3 +12,17 @@ C:\Users\topdo\source\repos\UserManagement\UserManagement.Services\obj\Debug\net
 C:\Users\topdo\source\repos\UserManagement\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.csproj.CopyComplete
 C:\Users\topdo\source\repos\UserManagement\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.dll
 C:\Users\topdo\source\repos\UserManagement\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.pdb
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Services.deps.json
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Services.dll
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Services.pdb
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Domain.dll
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Repository.dll
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Domain.pdb
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\bin\Debug\netcoreapp2.1\UserManagement.Repository.pdb
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.csprojAssemblyReference.cache
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.csproj.CoreCompileInputs.cache
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.AssemblyInfoInputs.cache
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.AssemblyInfo.cs
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.csproj.CopyComplete
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.dll
+C:\Users\topdo\Desktop\user-management\UserManagement.Services\obj\Debug\netcoreapp2.1\UserManagement.Services.pdb

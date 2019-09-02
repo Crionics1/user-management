@@ -1,19 +1,18 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v2.1",
+    "name": ".NETCoreApp,Version=v2.2",
     "signature": "f39bb4271725faf7cfd7d539a0526f5e72ed8f1d"
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v2.1": {
-      "StudentManagement.RepositoryContrib/1.0.0": {
+    ".NETCoreApp,Version=v2.2": {
+      "UserManagement.Repository/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.4",
-          "Dapper.Contrib": "2.0.4",
           "UserManagement.Domain": "1.0.0"
         },
         "runtime": {
-          "StudentManagement.RepositoryContrib.dll": {}
+          "UserManagement.Repository.dll": {}
         }
       },
       "Dapper/2.0.4": {
@@ -106,7 +105,7 @@
     }
   },
   "libraries": {
-    "StudentManagement.RepositoryContrib/1.0.0": {
+    "UserManagement.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

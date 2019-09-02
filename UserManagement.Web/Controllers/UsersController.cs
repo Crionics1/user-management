@@ -36,22 +36,6 @@ namespace UserManagement.Web.Controllers
             }
         }
 
-        //[HttpGet("{privateId}")]
-        //public ActionResult<User> Get(string privateId)
-        //{
-        //    try
-        //    {
-        //        return Ok(_userService.GetByPrivateID(privateId));
-        //    }
-        //    catch (NotFoundException ex)
-        //    {
-        //        return NotFound(ex.Message);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
-        //    }
-        //}
 
         [HttpGet("{privateId}")]
         public ActionResult<User> Get(string privateId)

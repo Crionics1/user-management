@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentManagement.RepositoryContrib\StudentManagement.RepositoryContrib.csproj" />
     <ProjectReference Include="..\UserManagement.Domain\UserManagement.Domain.csproj" />
+    <ProjectReference Include="..\UserManagement.Repository\UserManagement.Repository.csproj" />
   </ItemGroup>
 
 </Project>

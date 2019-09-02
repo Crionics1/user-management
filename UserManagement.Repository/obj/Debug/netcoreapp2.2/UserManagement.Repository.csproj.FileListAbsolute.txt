@@ -1,0 +1,9 @@
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\bin\Debug\netcoreapp2.2\UserManagement.Repository.deps.json
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\bin\Debug\netcoreapp2.2\UserManagement.Repository.dll
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\bin\Debug\netcoreapp2.2\UserManagement.Domain.dll
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\bin\Debug\netcoreapp2.2\UserManagement.Domain.pdb
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\obj\Debug\netcoreapp2.2\UserManagement.Repository.csprojAssemblyReference.cache
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\obj\Debug\netcoreapp2.2\UserManagement.Repository.csproj.CoreCompileInputs.cache
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\obj\Debug\netcoreapp2.2\UserManagement.Repository.AssemblyInfoInputs.cache
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\obj\Debug\netcoreapp2.2\UserManagement.Repository.AssemblyInfo.cs
+C:\Users\topdo\Desktop\user-management\UserManagement.Repository\obj\Debug\netcoreapp2.2\UserManagement.Repository.csproj.CopyComplete
