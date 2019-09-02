@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Dapper.Contrib.Extensions;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -28,6 +29,14 @@ namespace UserManagement.ConsoleTest
             user.Password = "Luka123321";
             user.RegistrationIP = "192.168.100.156";
 
+            Address address = new Address();
+            address.Country = "Georgia";
+            address.City = "Batumi";
+            address.Region = "Adjara";
+            address.PostalCode = "06665";
+            address.Address1 = "street chavchavadze";
+            address.UserID = 12;
+
             SqlConnection sqlConnection = new SqlConnection("Server=localhost; Database=UserManagement; Integrated Security=True;");
             DataManager<User> dataManager = new DataManager<User>(sqlConnection);
             DataManager<Address> dataManager1 = new DataManager<Address>(sqlConnection);
@@ -35,8 +44,8 @@ namespace UserManagement.ConsoleTest
             AddressService addressService = new AddressService(dataManager1,dataManager);
             UserService userService = new UserService(dataManager,addressService);
 
-            var rame = dataManager.Get(2);
-            Console.WriteLine(rame);
+            var adr = addressService.Create(address);
+            Console.WriteLine(adr.Address1);
 
             Console.ReadKey();
         }

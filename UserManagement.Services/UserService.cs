@@ -74,12 +74,19 @@ namespace UserManagement.Services
             {
                 throw new Exception(message: "Such user does not exist");
             }
+            user.Addresses = _addresService.GetByUser(user);
+
             return user;
         }
 
         public IEnumerable<User> GetAll()
         {
-            return _dataManager.GetAll();
+            var users = _dataManager.GetAll();
+            foreach (var user in users)
+            {
+                user.Addresses = _addresService.GetByUser(user);
+            }
+            return users;
         }
 
         public User GetByEmail(string email)
