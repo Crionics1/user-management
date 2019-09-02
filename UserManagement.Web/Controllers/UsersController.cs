@@ -36,6 +36,23 @@ namespace UserManagement.Web.Controllers
             }
         }
 
+        //[HttpGet("{privateId}")]
+        //public ActionResult<User> Get(string privateId)
+        //{
+        //    try
+        //    {
+        //        return Ok(_userService.GetByPrivateID(privateId));
+        //    }
+        //    catch (NotFoundException ex)
+        //    {
+        //        return NotFound(ex.Message);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+        //    }
+        //}
+
         [HttpGet("{privateId}")]
         public ActionResult<User> Get(string privateId)
         {
@@ -43,26 +60,26 @@ namespace UserManagement.Web.Controllers
             {
                 return Ok(_userService.GetByPrivateID(privateId));
             }
-            catch (BadRequestException ex)
+            catch (Exception ex)
             {
-                return NotFound(ex.Message);
-            }
-            catch (Exception)
-            {
+                if (ex  is NotFoundException)
+                {
+                   return NotFound(ex.Message);
+                }
                 return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
         }
 
-        [HttpGet("{email}")]
+        [HttpGet("mail/{email}")]
         public ActionResult<User> GetByEmail(string email)
         {
             try
             {
                 return Ok(_userService.GetByEmail(email));
             }
-            catch (BadRequestException ex)
+            catch (NotFoundException ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
             }
             catch (Exception)
             {

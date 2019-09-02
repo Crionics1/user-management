@@ -4,9 +4,9 @@ using System.Text;
 
 namespace UserManagement.Domain.Helpers
 {
-    public class BadRequestException : Exception
+    public class NotFoundException : Exception
     {
-        public BadRequestException(string message) : base(message: message)
+        public NotFoundException(string message) : base(message: message)
         {
 
         }

@@ -30,7 +30,7 @@ namespace UserManagement.Services
                 GetByEmail(t.Email);
                 GetByMobile(t.Mobile);
             }
-            catch (BadRequestException)
+            catch
             {
                 string hashedPassword = Hash(t.Password);
                 t.Password = hashedPassword;
@@ -38,7 +38,7 @@ namespace UserManagement.Services
                 return _dataManager.Create(t);
             }
 
-            throw new BadRequestException(message: "Can not create user. Email or Mobile number already in use!");
+            throw new NotFoundException(message: "Can not create user. Email or Mobile number already in use!");
         }
 
         public User Update(User t)
@@ -58,7 +58,7 @@ namespace UserManagement.Services
                 return _dataManager.Update(t);
             }
 
-            throw new BadRequestException(message: "Can not update user. Email or Mobile number already in use!");
+            throw new NotFoundException(message: "Can not update user. Email or Mobile number already in use!");
         }
 
         public User Delete(User t)
@@ -73,7 +73,7 @@ namespace UserManagement.Services
             var user = _dataManager.Get(id);
             if (user == null)
             {
-                throw new BadRequestException(message: "Such user does not exist");
+                throw new NotFoundException(message: "Such user does not exist");
             }
             user.Addresses = _addresService.GetByUser(user);
 
@@ -97,9 +97,9 @@ namespace UserManagement.Services
             {
                 user = _dataManager.GetAll().Single(u => u.Email == email);
             }
-            catch (BadRequestException)
+            catch (Exception)
             {
-                throw new BadRequestException(message: "There's no user associated with such Email.");
+                throw new NotFoundException(message: "There's no user associated with such Email.");
             }
             return user;
         }
@@ -111,9 +111,9 @@ namespace UserManagement.Services
             {
                 user = _dataManager.GetAll().Single(u => u.Mobile == mobile);
             }
-            catch (BadRequestException)
+            catch (Exception)
             {
-                throw new BadRequestException(message: "There's no user associated with such mobile number.");
+                throw new NotFoundException(message: "There's no user associated with such mobile number.");
             }
             return user;
         }
@@ -135,18 +135,10 @@ namespace UserManagement.Services
             {
                 user = _dataManager.GetAll().Single(u => u.PrivateID == privateID);
             }
-            catch (BadRequestException)
+            catch (Exception)
             {
-                throw new BadRequestException(message: "There's no user associated with such private ID.");
+                throw new NotFoundException(message: "There's no user associated with such private ID.");
             }
-            return user;
-        }
-        public User GetFull(int id)
-        {
-            var user = Get(id);
-            var address = _addresService.GetByUser(user);
-
-            user.Addresses = address;
             return user;
         }
 
@@ -159,7 +151,7 @@ namespace UserManagement.Services
 
             if (!user.Mobile.StartsWith(value.ToString()))
             {
-                throw new BadRequestException(message: "Mobile prefix should match users country mobile prefix!");
+                throw new NotFoundException(message: "Mobile prefix should match users country mobile prefix!");
             }
             return true;
         }
@@ -169,7 +161,7 @@ namespace UserManagement.Services
             PrivateIDLengths privateIDLength = (PrivateIDLengths)Enum.Parse(typeof(PrivateIDLengths), user.Resident);
             if (user.PrivateID.Length != (int)privateIDLength)
             {
-                throw new BadRequestException(message: "Private ID should match users country private ID length!");
+                throw new NotFoundException(message: "Private ID should match users country private ID length!");
             }
             return true;
         }
