@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UserManagement.Domain.Entities;
+using UserManagement.Domain.Helpers;
 using UserManagement.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,11 +24,45 @@ namespace UserManagement.Web.Controllers
 
         // GET: api/<controller>
         [HttpGet]
-        public ActionResult<User[]> GetAll()
+        public ActionResult<User[]> Get()
         {
             try
             {
                 return Ok(_userService.GetAll());
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+        }
+
+        [HttpGet("{privateId}")]
+        public ActionResult<User> Get(string privateId)
+        {
+            try
+            {
+                return Ok(_userService.GetByPrivateID(privateId));
+            }
+            catch (BadRequestException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+        }
+
+        [HttpGet("{email}")]
+        public ActionResult<User> GetByEmail(string email)
+        {
+            try
+            {
+                return Ok(_userService.GetByEmail(email));
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception)
             {

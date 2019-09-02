@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using UserManagement.Domain.Entities;
+using UserManagement.Domain.Helpers;
 using UserManagement.Repository;
 
 namespace UserManagement.Services
@@ -24,7 +25,7 @@ namespace UserManagement.Services
             var user = _userDataManager.Get(t.UserID);
             if (user == null)
             {
-                throw new Exception("No such user exists!");
+                throw new BadRequestException("No such user exists!");
             }
 
             return _dataManager.Create(t);
@@ -42,7 +43,7 @@ namespace UserManagement.Services
             var address = _dataManager.Get(id);
             if (address==null)
             {
-                throw new Exception(message: "Address does not exist");
+                throw new BadRequestException(message: "Address does not exist");
             }
             return address;
         }
@@ -58,7 +59,7 @@ namespace UserManagement.Services
             var user = _userDataManager.Get(t.UserID);
             if (user == null)
             {
-                throw new Exception("No such user exists!");
+                throw new BadRequestException("No such user exists!");
             }
 
             return _dataManager.Update(t);
