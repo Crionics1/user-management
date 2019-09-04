@@ -25,17 +25,18 @@ namespace UserManagement.Services
             var user = _userDataManager.Get(t.UserID);
             if (user == null)
             {
-                throw new NotFoundException("No such user exists!");
+                throw new BadRequestException("No such user exists!");
             }
 
             return _dataManager.Create(t);
         }
 
-        public Address Delete(Address t)
+        public bool Delete(int id)
         {
-            Get(t.ID);
-            
-            return _dataManager.Delete(t);
+            var adr = Get(id);
+            _dataManager.Delete(adr);
+
+            return true;
         }
 
         public Address Get(int id)
@@ -76,5 +77,17 @@ namespace UserManagement.Services
             return GetAll().Where(a => a.UserID == user.ID); 
         }
 
+        public IEnumerable<Address> GetByUserPrivateID(string privateId)
+        {
+            var user = _userDataManager.GetAll().FirstOrDefault(u => u.PrivateID == privateId);
+            if (user == null)
+            {
+                throw new NotFoundException(message: "User with such Private ID does not exist!");
+            }
+
+            var addresses = _dataManager.GetAll().Where(a => a.UserID == user.ID);
+
+            return addresses;
+        }
     }
 }

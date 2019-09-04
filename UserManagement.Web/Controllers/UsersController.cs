@@ -1,48 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using UserManagement.Domain.Entities;
 using UserManagement.Domain.Helpers;
 using UserManagement.Services;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Collections;
+using System.Collections.Generic;
+using UserManagement.Web.ResponseTypes;
+using System.Data;
 
 namespace UserManagement.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    [ApiController]
+    public class UsersController : Controller
     {
         private IUserService _userService;
+        private IAddressService _addressService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService,IAddressService addressService)
         {
             _userService = userService;
+            _addressService = addressService;
         }
 
         // GET: api/<controller>
         [HttpGet]
-        public ActionResult<User[]> Get()
+        public ActionResult<IEnumerable<User>> Get()
         {
+            BaseListResponse<User> response = new BaseListResponse<User>();
+            
             try
             {
-                return Ok(_userService.GetAll());
+                response.Records = _userService.GetAll();
+                return Ok(response);
             }
-            catch (Exception)
+            catch
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
         }
-
 
         [HttpGet("{privateId}")]
         public ActionResult<User> Get(string privateId)
         {
             try
             {
-                return Ok(_userService.GetByPrivateID(privateId));
+                var user = _userService.GetByPrivateID(privateId);
+                return Ok(user);
             }
             catch (Exception ex)
             {
@@ -54,19 +59,130 @@ namespace UserManagement.Web.Controllers
             }
         }
 
-        [HttpGet("mail/{email}")]
+        [HttpGet("GetByEmail/{email}")]
         public ActionResult<User> GetByEmail(string email)
         {
             try
             {
-                return Ok(_userService.GetByEmail(email));
+                var user = _userService.GetByEmail(email);
+                return Ok(user);
             }
-            catch (NotFoundException ex)
+            catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                if (ex is NotFoundException)
+                {
+
+                    return NotFound(ex.Message);
+                }
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
-            catch (Exception)
+        }
+
+        [HttpGet("GetByMobile/{mobile}")]
+        public ActionResult<User> GetByMobile(string mobile)
+        {
+            try
             {
+                var user = _userService.GetByMobile(mobile);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotFoundException)
+                {
+
+                    return NotFound(ex.Message);
+                }
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+        }
+
+        [HttpGet("GetByFirstName/{firstName}")]
+        public ActionResult<IEnumerable<User>> GetByFirstNAme(string firstName)
+        {
+            BaseListResponse<User> response = new BaseListResponse<User>();
+
+            try
+            {
+                response.Records = _userService.GetByFirstName(firstName);
+                return Ok(response);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+        }
+
+        [HttpGet("GetByLastName/{lastName}")]
+        public ActionResult<IEnumerable<User>> GetByLastNAme(string lastName)
+        {
+            BaseListResponse<User> response = new BaseListResponse<User>();
+
+            try
+            {
+                response.Records = _userService.GetByLastName(lastName);
+                return Ok(response);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult<User> Post(User user)
+        {
+            try
+            {
+                _userService.Create(user);
+                return Created($"/api/users/{user.PrivateID}", user);
+            }
+            catch (Exception ex)
+            {
+                if (ex is BadRequestException)
+                {
+                    return BadRequest(ex.Message);
+                }
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure" );
+            }
+        }
+
+        [HttpPut]
+        public ActionResult<User> Put(User user)
+        {
+            try
+            {
+                _userService.Update(user);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                if (ex is BadRequestException)
+                {
+                    return BadRequest(ex.Message);
+                }
+                if (ex is NotFoundException)
+                {
+                    return NotFound(ex.Message);
+                }
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+        }
+
+        [HttpDelete("{userId}")]
+        public ActionResult Delete(int userId)
+        {
+            try
+            {
+                _userService.Delete(userId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotFoundException)
+                {
+                    return BadRequest(ex.Message);
+                }
                 return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
         }

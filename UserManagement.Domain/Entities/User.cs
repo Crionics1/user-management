@@ -18,13 +18,13 @@ namespace UserManagement.Domain.Entities
         public string FirstName { get; set; }
 
         [MaxLength(50)]
-        [Name(2)]
         [Required]
+        [Name(2)]
         public string LastName { get; set; }
 
         [Required]
         [MinimumAge(16)]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         [Required]
         [MaxLength(50)]
@@ -34,14 +34,14 @@ namespace UserManagement.Domain.Entities
         [Required]
         public string PrivateID { get; set; }
 
-        [MaxLength(50)]
         [Required]
         public bool Gender { get; set; }
 
         [Required]
-        public DateTime RegistrationDate { get; set; }
+        public DateTime? RegistrationDate { get; set; }
 
         [MaxLength(50)]
+        [Required]
         public string RegistrationIP { get; set; }
 
         [MaxLength(50)]
@@ -59,7 +59,7 @@ namespace UserManagement.Domain.Entities
 
         [Required]
         [MinLength(6)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         [ComplexPassword]
         public string Password { get; set; }
 

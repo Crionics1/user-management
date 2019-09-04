@@ -9,5 +9,6 @@ namespace UserManagement.Services
     {
         int GetUserID(int id);
         IEnumerable<Address> GetByUser(User user);
+        IEnumerable<Address> GetByUserPrivateID(string privateId);
     }
 }

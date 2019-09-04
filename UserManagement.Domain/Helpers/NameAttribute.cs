@@ -13,6 +13,10 @@ namespace UserManagement.Domain.Helpers
 
         public override bool IsValid(object value)
         {
+            if (value == null)
+            {
+                return false;
+            }
             if (Regex.IsMatch(value.ToString(), @"^[a-zA-Z]+$") && _length >= 2)
             {
                 return true;

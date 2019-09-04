@@ -12,14 +12,18 @@ namespace UserManagement.Domain.Helpers
             _minimumAge = minimumAge;
         }
 
-        public override bool IsValid(object value)
+        protected override ValidationResult IsValid(object value,ValidationContext validationContext)
         {
-            if (DateTime.TryParse(value.ToString(), out DateTime date))
+            if (value == null)
             {
-                return date.AddYears(_minimumAge) < DateTime.Now;
+                return new ValidationResult("Minimum Age is 16!");
             }
-
-            return false;
+            var foo = DateTime.TryParse(value.ToString(), out DateTime date);
+            if (date.AddYears(_minimumAge) < DateTime.Now)
+            {
+                return ValidationResult.Success;
+            }
+            return new ValidationResult($"Minimum Age is {_minimumAge}!");
         }
     }
 }

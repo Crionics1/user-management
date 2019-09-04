@@ -8,7 +8,7 @@ namespace UserManagement.Services
     {
         T Create(T t);
         T Update(T t);
-        T Delete(T t);
+        bool Delete(int id);
         T Get(int id);
         IEnumerable<T> GetAll();
     }

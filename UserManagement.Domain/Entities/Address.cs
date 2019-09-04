@@ -9,6 +9,7 @@ namespace UserManagement.Domain.Entities
         [Dapper.Contrib.Extensions.Key]
         public int ID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Country { get; set; }
         [Required]
         [MaxLength(50)]

@@ -6,6 +6,7 @@ using UserManagement.Repository;
 using System.Linq;
 using UserManagement.Domain.Enums;
 using UserManagement.Domain.Helpers;
+using System.Data;
 
 namespace UserManagement.Services
 {
@@ -22,50 +23,29 @@ namespace UserManagement.Services
 
         public User Create(User t)
         {
-            ValidateMobile(t);
-            ValidatePrivateID(t);
-
-            try
-            {
-                GetByEmail(t.Email);
-                GetByMobile(t.Mobile);
-            }
-            catch
-            {
-                string hashedPassword = Hash(t.Password);
-                t.Password = hashedPassword;
-
-                return _dataManager.Create(t);
-            }
-
-            throw new NotFoundException(message: "Can not create user. Email or Mobile number already in use!");
+            Validate(t);
+            
+            string hashedPassword = Hash(t.Password);
+            t.Password = hashedPassword;
+    
+            return _dataManager.Create(t);
         }
 
         public User Update(User t)
         {
-            ValidateMobile(t);
-            ValidatePrivateID(t);
-
             Get(t.ID);
+            Validate(t);
 
-            try
-            {
-                GetByEmail(t.Email);
-                GetByMobile(t.Mobile);
-            }
-            catch
-            {
-                return _dataManager.Update(t);
-            }
-
-            throw new NotFoundException(message: "Can not update user. Email or Mobile number already in use!");
+            return _dataManager.Update(t);
         }
 
-        public User Delete(User t)
+        public bool Delete(int id)
         {
-            Get(t.ID);
+            var user = Get(id);
 
-            return _dataManager.Delete(t);
+            _dataManager.Delete(user);
+
+            return true;
         }
 
         public User Get(int id)
@@ -75,6 +55,7 @@ namespace UserManagement.Services
             {
                 throw new NotFoundException(message: "Such user does not exist");
             }
+
             user.Addresses = _addresService.GetByUser(user);
 
             return user;
@@ -96,6 +77,7 @@ namespace UserManagement.Services
             try
             {
                 user = _dataManager.GetAll().Single(u => u.Email == email);
+                user.Addresses = _addresService.GetByUser(user);
             }
             catch (Exception)
             {
@@ -110,6 +92,7 @@ namespace UserManagement.Services
             try
             {
                 user = _dataManager.GetAll().Single(u => u.Mobile == mobile);
+                user.Addresses = _addresService.GetByUser(user);
             }
             catch (Exception)
             {
@@ -134,6 +117,7 @@ namespace UserManagement.Services
             try
             {
                 user = _dataManager.GetAll().Single(u => u.PrivateID == privateID);
+                user.Addresses = _addresService.GetByUser(user);
             }
             catch (Exception)
             {
@@ -151,8 +135,9 @@ namespace UserManagement.Services
 
             if (!user.Mobile.StartsWith(value.ToString()))
             {
-                throw new NotFoundException(message: "Mobile prefix should match users country mobile prefix!");
+                throw new BadRequestException(message: "Mobile prefix should match users country mobile prefix!");
             }
+
             return true;
         }
 
@@ -161,8 +146,31 @@ namespace UserManagement.Services
             PrivateIDLengths privateIDLength = (PrivateIDLengths)Enum.Parse(typeof(PrivateIDLengths), user.Resident);
             if (user.PrivateID.Length != (int)privateIDLength)
             {
-                throw new NotFoundException(message: "Private ID should match users country private ID length!");
+                throw new BadRequestException(message: "Private ID should match users country private ID length!");
             }
+            return true;
+        }
+
+        private bool ValidateUniqueKeys(User user)
+        {
+            List<User> users = (List<User>)GetAll();
+            users.Remove(users.FirstOrDefault(u => u.ID == user.ID));
+
+            if (users.FirstOrDefault(u => u.Mobile == user.Mobile) == null &&
+                users.FirstOrDefault(u => u.PrivateID == user.PrivateID) == null &&
+                users.FirstOrDefault(u => u.Email == user.Email) == null)
+            {
+                return true;
+            }
+            throw new BadRequestException("Can not create user. Email, Mobile number or Private ID is already in use!");
+        }
+
+        private bool Validate(User user)
+        {
+            ValidateMobile(user);
+            ValidatePrivateID(user);
+            ValidateUniqueKeys(user);
+
             return true;
         }
 
