@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UserManagement.Domain.Entities;
@@ -84,9 +82,14 @@ namespace UserManagement.Web.Controllers
         {
             try
             {
-                _addressService.GetByUserPrivateID(privateId);
-                _addressService.Delete(id);
-                return Ok();
+                var adr = _addressService.Get(id);
+                var user = _userService.GetByPrivateID(privateId);
+                if (adr.UserID == user.ID)
+                {
+                    _addressService.Delete(id);
+                    return Ok();
+                }
+                return BadRequest("Private ID is not associated with that address id!");
             }
             catch (Exception ex)
             {

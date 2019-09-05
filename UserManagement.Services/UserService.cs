@@ -6,7 +6,6 @@ using UserManagement.Repository;
 using System.Linq;
 using UserManagement.Domain.Enums;
 using UserManagement.Domain.Helpers;
-using System.Data;
 
 namespace UserManagement.Services
 {
@@ -21,32 +20,23 @@ namespace UserManagement.Services
             _addresService = addresService;
         }
 
-        public User Create(User t)
+        public User Create(User user)
         {
-            Validate(t);
+            Validate(user);
             
-            string hashedPassword = Hash(t.Password);
-            t.Password = hashedPassword;
+            string hashedPassword = Hash(user.Password);
+            user.Password = hashedPassword;
 
-            return _dataManager.Create(t);
+            return _dataManager.Create(user);
         }
 
-        public User Update(User t)
+        public User Update(User user)
         {
-            Get(t.ID);
-            Validate(t);
+            Get(user.ID);
+            Validate(user);
 
-            return _dataManager.Update(t);
+            return _dataManager.Update(user);
         }
-
-        //public bool Delete(int id)
-        //{
-        //    var user = Get(id);
-
-        //    _dataManager.Delete(user);
-
-        //    return true;
-        //}
 
         public bool Delete(int id)
         {

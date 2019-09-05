@@ -18,15 +18,15 @@ namespace UserManagement.Services
             _dataManager = dataManager;
         }
 
-        public Address Create(Address t)
+        public Address Create(Address address)
         {
-            var user = _userDataManager.Get(t.UserID);
+            var user = _userDataManager.Get(address.UserID);
             if (user == null)
             {
                 throw new BadRequestException("No such user exists!");
             }
 
-            return _dataManager.Create(t);
+            return _dataManager.Create(address);
         }
 
         public bool Delete(int id)
@@ -52,16 +52,11 @@ namespace UserManagement.Services
             return _dataManager.GetAll();
         }
 
-        public Address Update(Address t)
+        public Address Update(Address address)
         {
-            Get(t.ID);
-            //var user = _userDataManager.Get(t.UserID);
-            //if (user == null)
-            //{
-            //    throw new NotFoundException("No such user exists!");
-            //}
+            Get(address.ID);
 
-            return _dataManager.Update(t);
+            return _dataManager.Update(address);
         }
 
         public int GetUserID(int id)

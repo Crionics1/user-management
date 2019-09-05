@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UserManagement.Domain.Enums
+﻿namespace UserManagement.Domain.Enums
 {
     public enum MobilePrefixes
     {

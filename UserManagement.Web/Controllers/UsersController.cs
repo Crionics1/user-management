@@ -4,10 +4,8 @@ using Microsoft.AspNetCore.Http;
 using UserManagement.Domain.Entities;
 using UserManagement.Domain.Helpers;
 using UserManagement.Services;
-using System.Collections;
 using System.Collections.Generic;
 using UserManagement.Web.ResponseTypes;
-using System.Data;
 
 namespace UserManagement.Web.Controllers
 {
