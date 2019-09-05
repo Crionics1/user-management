@@ -27,7 +27,7 @@ namespace UserManagement.Services
             
             string hashedPassword = Hash(t.Password);
             t.Password = hashedPassword;
-    
+
             return _dataManager.Create(t);
         }
 
@@ -39,9 +39,24 @@ namespace UserManagement.Services
             return _dataManager.Update(t);
         }
 
+        //public bool Delete(int id)
+        //{
+        //    var user = Get(id);
+
+        //    _dataManager.Delete(user);
+
+        //    return true;
+        //}
+
         public bool Delete(int id)
         {
             var user = Get(id);
+
+            var addresses = _addresService.GetByUser(user);
+            foreach (var address in addresses)
+            {
+                _addresService.Delete(address.ID);
+            }
 
             _dataManager.Delete(user);
 
@@ -64,6 +79,7 @@ namespace UserManagement.Services
         public IEnumerable<User> GetAll()
         {
             var users = _dataManager.GetAll();
+
             foreach (var user in users)
             {
                 user.Addresses = _addresService.GetByUser(user);

@@ -13,13 +13,15 @@ namespace UserManagement.Domain.Entities
         public int ID { get; set; }
 
         [MaxLength(50)]
+        [MinLength(2)]
         [Required]
-        [Name(2)]
+        [Name]
         public string FirstName { get; set; }
 
         [MaxLength(50)]
+        [MinLength(2)]
         [Required]
-        [Name(2)]
+        [Name]
         public string LastName { get; set; }
 
         [Required]

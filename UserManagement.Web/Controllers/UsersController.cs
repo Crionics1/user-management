@@ -18,7 +18,7 @@ namespace UserManagement.Web.Controllers
         private IUserService _userService;
         private IAddressService _addressService;
 
-        public UsersController(IUserService userService,IAddressService addressService)
+        public UsersController(IUserService userService, IAddressService addressService)
         {
             _userService = userService;
             _addressService = addressService;
@@ -29,7 +29,7 @@ namespace UserManagement.Web.Controllers
         public ActionResult<IEnumerable<User>> Get()
         {
             BaseListResponse<User> response = new BaseListResponse<User>();
-            
+
             try
             {
                 response.Records = _userService.GetAll();
@@ -51,9 +51,9 @@ namespace UserManagement.Web.Controllers
             }
             catch (Exception ex)
             {
-                if (ex  is NotFoundException)
+                if (ex is NotFoundException)
                 {
-                   return NotFound(ex.Message);
+                    return NotFound(ex.Message);
                 }
                 return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
@@ -143,15 +143,16 @@ namespace UserManagement.Web.Controllers
                 {
                     return BadRequest(ex.Message);
                 }
-                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure" );
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
         }
 
-        [HttpPut]
-        public ActionResult<User> Put(User user)
+        [HttpPut("{id}")]
+        public ActionResult<User> Put(int id,User user)
         {
             try
             {
+                user.ID = id;
                 _userService.Update(user);
                 return Ok(user);
             }

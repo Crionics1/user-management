@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Text;
 using UserManagement.Domain.Entities;
 using UserManagement.Domain.Helpers;
 using UserManagement.Repository;
@@ -57,11 +55,11 @@ namespace UserManagement.Services
         public Address Update(Address t)
         {
             Get(t.ID);
-            var user = _userDataManager.Get(t.UserID);
-            if (user == null)
-            {
-                throw new NotFoundException("No such user exists!");
-            }
+            //var user = _userDataManager.Get(t.UserID);
+            //if (user == null)
+            //{
+            //    throw new NotFoundException("No such user exists!");
+            //}
 
             return _dataManager.Update(t);
         }
@@ -79,8 +77,12 @@ namespace UserManagement.Services
 
         public IEnumerable<Address> GetByUserPrivateID(string privateId)
         {
-            var user = _userDataManager.GetAll().FirstOrDefault(u => u.PrivateID == privateId);
-            if (user == null)
+            User user;
+            try
+            {
+                user = _userDataManager.GetAll().Single(u => u.PrivateID == privateId);
+            }
+            catch (Exception)
             {
                 throw new NotFoundException(message: "User with such Private ID does not exist!");
             }

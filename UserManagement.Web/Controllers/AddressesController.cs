@@ -16,9 +16,11 @@ namespace UserManagement.Web.Controllers
     public class AddressesController : ControllerBase
     {
         private IAddressService _addressService;
-        public AddressesController(IAddressService addressService)
+        private IUserService _userService;
+        public AddressesController(IAddressService addressService,IUserService userService)
         {
             _addressService = addressService;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -59,12 +61,17 @@ namespace UserManagement.Web.Controllers
         {
             try
             {
+                address.UserID = _userService.GetByPrivateID(privateId).ID;
                 _addressService.Create(address);
                 return Created($"/api/users/{privateId}/addresses", address);
             }
             catch (Exception ex)
             {
                 if (ex is BadRequestException)
+                {
+                    return BadRequest(ex.Message);
+                }
+                if (ex is NotFoundException)
                 {
                     return BadRequest(ex.Message);
                 }
@@ -89,6 +96,27 @@ namespace UserManagement.Web.Controllers
                 }
                 return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
+        }
+
+        [HttpPut("{id:int}")]
+        public ActionResult Put(string privateId,int id,Address address)
+        {
+            try
+            {
+                address.ID = id;
+                address.UserID = _userService.GetByPrivateID(privateId).ID;
+                _addressService.Update(address);
+                return Ok(address);
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotFoundException)
+                {
+                    return BadRequest(ex.Message);
+                }
+                
+            }
+            return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
         }
     }
 }
