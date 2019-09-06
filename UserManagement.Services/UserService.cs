@@ -11,13 +11,11 @@ namespace UserManagement.Services
 {
     public class UserService : IUserService
     {
-        private IDataManager<User> _dataManager;
-        private IAddressService _addresService;
+        private IUserDataManager _dataManager;
 
-        public UserService(IDataManager<User> dataManager, IAddressService addresService)
+        public UserService(IUserDataManager dataManager)
         {
             _dataManager = dataManager;
-            _addresService = addresService;
         }
 
         public User Create(User user)
@@ -42,12 +40,6 @@ namespace UserManagement.Services
         {
             var user = Get(id);
 
-            var addresses = _addresService.GetByUser(user);
-            foreach (var address in addresses)
-            {
-                _addresService.Delete(address.ID);
-            }
-
             _dataManager.Delete(user);
 
             return true;
@@ -61,7 +53,6 @@ namespace UserManagement.Services
                 throw new NotFoundException(message: "Such user does not exist");
             }
 
-            user.Addresses = _addresService.GetByUser(user);
 
             return user;
         }
@@ -70,10 +61,6 @@ namespace UserManagement.Services
         {
             var users = _dataManager.GetAll();
 
-            foreach (var user in users)
-            {
-                user.Addresses = _addresService.GetByUser(user);
-            }
             return users;
         }
 
@@ -83,7 +70,6 @@ namespace UserManagement.Services
             try
             {
                 user = _dataManager.GetAll().Single(u => u.Email == email);
-                user.Addresses = _addresService.GetByUser(user);
             }
             catch (Exception)
             {
@@ -98,7 +84,6 @@ namespace UserManagement.Services
             try
             {
                 user = _dataManager.GetAll().Single(u => u.Mobile == mobile);
-                user.Addresses = _addresService.GetByUser(user);
             }
             catch (Exception)
             {
@@ -123,7 +108,6 @@ namespace UserManagement.Services
             try
             {
                 user = _dataManager.GetAll().Single(u => u.PrivateID == privateID);
-                user.Addresses = _addresService.GetByUser(user);
             }
             catch (Exception)
             {

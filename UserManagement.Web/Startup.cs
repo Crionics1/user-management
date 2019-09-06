@@ -30,10 +30,10 @@ namespace UserManagement.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IAddressService, AddressService>();
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IDataManager<User>, DataManager<User>>();
-            services.AddTransient<IDataManager<Address>, DataManager<Address>>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IDataManager<User>, UserDataManager>();
+            services.AddScoped<IDataManager<Address>, DataManager<Address>>();
             services.AddTransient<IDbConnection>(db => new SqlConnection(
                     Configuration.GetConnectionString("UserManagement")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

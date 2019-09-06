@@ -6,7 +6,7 @@ namespace UserManagement.Repository
 {
     public class DataManager<T> : IDataManager<T> where T : class
     {
-        private IDbConnection _dbConnection;
+        protected IDbConnection _dbConnection;
         public DataManager(IDbConnection dbConnection)
         {
             _dbConnection = dbConnection;
@@ -26,7 +26,7 @@ namespace UserManagement.Repository
             return t;
         }
 
-        public T Delete(T t)
+        public virtual T Delete(T t)
         {
             try
             {
